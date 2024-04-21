@@ -16,6 +16,25 @@ target_include_directories(${PROJECT_NAME} PRIVATE
   include
 )
 
+if(NINTENDO_3DS)
+  target_include_directories(${PROJECT_NAME} PRIVATE
+    include/platform/3ds
+  )
+
+  target_sources(${PROJECT_NAME} PRIVATE
+    source/3ds/platform.c
+  )
+
+  ctr_generate_smdh(${PROJECT_NAME}.smdh
+    NAME "${PROJECT_NAME}"
+    DESCRIPTION "v${PROJECT_VERSION}"
+    AUTHOR "(c) 2024 Dave Murphy"
+  )
+
+  ctr_create_3dsx(${PROJECT_NAME}
+    SMDH ${PROJECT_NAME}.smdh
+  )
+endif()
 
 if(NINTENDO_WII)
   target_include_directories(${PROJECT_NAME} PRIVATE
