@@ -17,6 +17,28 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 
+if(NINTENDO_WII)
+  target_include_directories(${PROJECT_NAME} PRIVATE
+    include/platform/wii
+  )
+endif()
+
+if(NINTENDO_GAMECUBE)
+  target_include_directories(${PROJECT_NAME} PRIVATE
+    include/platform/gamecube
+  )
+endif()
+
+if(NINTENDO_WII OR NINTENDO_GAMECUBE)
+
+  target_sources(${PROJECT_NAME} PRIVATE
+    source/ogc/platform.c
+  )
+
+  ogc_create_dol(test)
+
+endif()
+
 if(NINTENDO_SWITCH)
   target_include_directories(${PROJECT_NAME} PRIVATE
     include/platform/switch
