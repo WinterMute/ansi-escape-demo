@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(test LANGUAGES C VERSION 1.0.0)
+project(ansi-escape-demo LANGUAGES C VERSION 1.0.0)
 
 add_executable(${PROJECT_NAME})
 
