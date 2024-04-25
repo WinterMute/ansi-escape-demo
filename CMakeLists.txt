@@ -54,7 +54,7 @@ if(NINTENDO_WII OR NINTENDO_GAMECUBE)
     source/ogc/platform.c
   )
 
-  ogc_create_dol(test)
+  ogc_create_dol(${PROJECT_NAME})
 
 endif()
 
