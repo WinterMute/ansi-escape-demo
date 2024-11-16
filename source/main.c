@@ -40,23 +40,23 @@ int main(int argc, char **argv) {
     {
         printf(
        		    CONSOLE_ESC(%1$d;1m) /* Set color */
-                "Default "
-                CONSOLE_ESC(1m) "Bold "
-                CONSOLE_ESC(7m) "Reverse "
+                "Dflt "
+                CONSOLE_ESC(1m) "Bld "
+                CONSOLE_ESC(7m) "Rvs "
 
                 CONSOLE_ESC(0m) /* revert attributes*/
                 CONSOLE_ESC(%1$d;1m)
 
-                CONSOLE_ESC(2m) "Light "
-                CONSOLE_ESC(7m) "Reverse "
+                CONSOLE_ESC(2m) "Lgt "
+                CONSOLE_ESC(7m) "Rvs "
 
                 CONSOLE_ESC(0m) /* revert attributes*/
                 CONSOLE_ESC(%1$d;1m)
-                CONSOLE_ESC(4m) "Under "
+                CONSOLE_ESC(4m) "Und "
 
                 CONSOLE_ESC(0m) /* revert attributes*/
                 CONSOLE_ESC(%1$d;1m)
-                CONSOLE_ESC(9m) "Strike "
+                CONSOLE_ESC(9m) "Strk "
                 "\n"
                 CONSOLE_ESC(0m) /* revert attributes*/
                 , i + 30);
