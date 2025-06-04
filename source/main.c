@@ -61,9 +61,25 @@ int main(int argc, char **argv) {
         CONSOLE_ESC(0m) /* revert attributes*/
         , i + 30, 7 - i + 40);
   }
-    }
 
-	while(platform_main_loop()) {
+  printf("\n");
+
+  int i, j, n;
+
+  int startCodes[] = { 0, 30, 40, 90};
+
+  for (i = 0; i < sizeof(startCodes)/sizeof(startCodes[0]); i++) {
+    for (j = 0; j < 10; j++) {
+      n = startCodes[i] + j;
+      printf("\033[%dm %2d\033[m", n, n);
+    }
+    printf("\n");
+  }
+
+  for (i=100; i<108; i++) {
+    printf("\033[%dm %3d\033[m", i, i);
+  }
+  printf("\n");
 
   while(platform_main_loop()) {
 
