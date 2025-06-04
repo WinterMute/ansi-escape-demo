@@ -16,6 +16,19 @@ target_include_directories(${PROJECT_NAME} PRIVATE
   include
 )
 
+if(NINTENDO_DS)
+  target_include_directories(${PROJECT_NAME} PRIVATE
+    include/platform/nds
+  )
+
+  target_sources(${PROJECT_NAME} PRIVATE
+    source/nds/platform.c
+  )
+
+  nds_create_rom(${PROJECT_NAME})
+
+endif()
+
 if(NINTENDO_3DS)
   target_include_directories(${PROJECT_NAME} PRIVATE
     include/platform/3ds
